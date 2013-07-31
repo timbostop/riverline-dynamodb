@@ -6,7 +6,6 @@ use Aws\DynamoDb\Enum\Type;
 
 /**
  * @class
- * @todo Add Binary Type
  */
 class Attribute implements \IteratorAggregate
 {
@@ -37,6 +36,8 @@ class Attribute implements \IteratorAggregate
         switch ($type) {
             case Type::STRING:
                 $value = strval($value);
+                break;
+            case Type::BINARY:
                 break;
             case Type::NUMBER:
                 $value = $value+0;
